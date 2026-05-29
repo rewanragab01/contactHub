@@ -1,0 +1,238 @@
+body {
+    background-color: #f8fafc;
+}
+
+.bg-favorites {
+    background: #ff9d00;
+}
+
+.bg-emergency {
+    background: #f60e40;
+}
+
+.bg-total {
+    background: #2270ff;
+}
+
+.nav-right .icon-box {
+    background-color: #5339f7;
+}
+
+.icon-box,
+.emergency-box,
+.favorite-box,
+.number-box {
+    width: 50px;
+    height: 50px;
+
+    color: white;
+    border-radius: 16px;
+}
+
+.nav-item .button {
+    background-color: #5339f7;
+    color: white;
+    border: 0;
+    border-radius: 12px;
+    padding: 5px 8px;
+    transition: 0.3s all;
+}
+
+.nav-item .button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 2px 5px #5339f7;
+}
+
+
+
+.navbar-nav .navbtn-icon {
+    background-color: transparent;
+    transition: 0.3s all;
+}
+
+.navbar-nav .navbtn-icon:hover {
+    background-color: #F3F4F6;
+}
+
+.navbar-nav img {
+    width: 40px;
+}
+
+.form-control:focus {
+    border-color: #5339f7;
+    box-shadow: 0px 0px 0px 2px #C092FE;
+}
+
+
+textarea {
+    resize: none;
+}
+
+.addContact-box .inner::-webkit-scrollbar {
+    display: none;
+    scroll-behavior: smooth;
+}
+
+.btn-cancel {
+    border-radius: 12px;
+    background-color: #f3f4f6;
+}
+
+.btn-cancel:hover {
+    background-color: #E5E7EB;
+}
+
+.btn.btn-cancel:focus,
+.btn.btn-cancel:active,
+.btn.btn-cancel:focus-visible,
+.btn.btn-cancel:active:focus {
+    background-color: #E5E7EB;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+.btn-save {
+    border-radius: 12px;
+    background-color: #7a27fd;
+}
+
+.btn-save:hover {
+    background-color: #7a27fd;
+    box-shadow: 5px 5px 5px -5px #7a27fd;
+}
+
+.btn.btn-save:focus,
+.btn.btn-save:active,
+.btn.btn-save:focus-visible,
+.btn.btn-save:active:focus {
+    background-color: #691ee6;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+.close:hover {
+
+    border-radius: 8px;
+    background-color: #E5E7EB;
+}
+
+.btn.close-btn {
+    background-color: transparent;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+.btn.close-btn:hover {
+    background-color: #E5E7EB;
+}
+
+.btn.card-btn {
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.btn.card-btn.phone {
+    background-color: #ecfdf5;
+    transition: 0.3s all;
+}
+
+.btn.card-btn.phone:hover {
+    background-color: #D0FAE5;
+}
+
+.btn.card-btn.email {
+    background-color: #f5f3ff;
+    transition: 0.3s all;
+}
+
+.btn.card-btn.email:hover {
+    background-color: #EDE9FE;
+    color: #FFB900;
+}
+
+.btn.card-btn.merg {
+    background-color: #fff1f2;
+}
+
+.btn.card-btn.merg:hover {
+    background-color: #FFE4E6;
+}
+
+
+.btn.fav-btn,
+.btn.update-btn,
+.btn.delete-btn {
+    background-color: transparent;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: 0.5s all;
+    color: #6c757d;
+}
+
+
+
+.btn.fav-btn:hover,
+.btn.update-btn:hover,
+.btn.delete-btn:hover {
+    background-color: #E5E7EB;
+}
+
+.btn.fav-btn:hover {
+    color: #FFB900;
+}
+
+.btn.update-btn:hover {
+    color: #4F39F6;
+}
+
+.btn.delete-btn:hover {
+    color: #f60e40;
+}
+
+.leftSide .number-box {
+    background-color: #FFF1F2;
+    color: #EE0027;
+    transition: 0.4s all;
+}
+
+.emergency-body .inner {
+    background-color: #F9FAFB;
+}
+
+.emergency-body .inner:hover {
+    background-color: #FFF1F2;
+}
+
+.emergency-body .inner:hover .leftSide .number-box {
+    background-color: #f60e40;
+    color: white;
+}
+
+.favorite-body .leftSide .number-box {
+    background-color: #D0FAE5;
+    color: #009966;
+    transition: 0.4s all;
+}
+
+.favorite-body .inner {
+    background-color: #F9FAFB;
+}
+
+.favorite-body .inner:hover {
+    background-color: #FFF8ED;
+}
+
+.favorite-body .inner:hover .leftSide .number-box {
+    background-color: #00BC7D;
+    color: white;
+}

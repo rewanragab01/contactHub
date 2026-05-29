@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContactHub - Smart Contact Manager</title>
+    <link rel="icon" type="image/png" href="./images/favicon.png">
+    <link rel="stylesheet" href="./webfonts/css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/stylesheet.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header>
+
+        <nav class="navbar navbar-expand-lg bg-white p-3 border border-1 ">
+            <div class="container d-flex justify-content-between align-items-center">
+
+                <div class="nav-right d-flex align-items-center gap-2">
+                    <div class="icon-box text-center d-flex align-items-center justify-content-center">
+                        <i class="fa-solid fa-address-book fs-5"></i>
+                    </div>
+                    <div class="nav-title">
+                        <h1 class="m-0 fs-5">Contact<span style="color: #5339f7;">Hub</span></h1>
+                        <p class="m-0 small text-muted">Smart Contact Manager</p>
+                    </div>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto align-items-center gap-2">
+                        <li class="nav-item ">
+                            <button type="button" class="button" id="addBtn">
+                                <i class="fa-solid fa-plus"></i> Add Contact
+                            </button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="rounded-2 py-1 px-2 border-0  text-muted navbtn-icon me-2"><i
+                                    class="fa-solid fa-bell"></i></button>
+                        </li>
+
+                        <li class="nav-item">
+                            <button class="rounded-2 py-1 px-2 border-0  text-muted navbtn-icon me-2"><i
+                                    class="fa-solid fa-gear"></i></button>
+                        </li>
+
+                        <li class="nav-item">
+                            <img src="./images/avatar-2.jpg" class="rounded-3">
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
+    </header>
+
+
+
+    <main>
+        <section class="notes-type">
+            <div class="container mt-5">
+                <div class="row g-3">
+
+                    <div class="col-6 col-md-4">
+                        <div class="inner d-flex gap-2 bg-white p-3 border rounded-4 border-light-subtle">
+                            <div class="icon-box text-center d-flex align-items-center justify-content-center bg-total">
+                                <i class="fa-solid fa-users fs-5"></i>
+                            </div>
+                            <div class="box-content">
+                                <p class="m-0 text-muted">total</p>
+                                <span class="fw-bold fs-4" id="contacts-length">0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <div class="inner d-flex gap-2 bg-white p-3 border rounded-4 border-light-subtle">
+                            <div
+                                class="icon-box text-center d-flex align-items-center justify-content-center bg-favorites">
+                                <i class="fa-solid fa-star fs-5"></i>
+                            </div>
+                            <div class="box-content">
+                                <p class="m-0 text-muted">Favorites</p>
+                                <span class="fw-bold fs-4" id="favorites-length">0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4">
+                        <div class="inner d-flex gap-2 bg-white p-3 border rounded-4 border-light-subtle">
+                            <div
+                                class="icon-box text-center d-flex align-items-center justify-content-center bg-emergency">
+                                <i class="fa-solid fa-heart-pulse fs-5"></i>
+                            </div>
+                            <div class="box-content">
+                                <p class="m-0 text-muted">Emergency</p>
+                                <span class="fw-bold fs-4" id="emergency-length">0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-8 order-1 order-lg-1">
+                        <div class="mb-2">
+                            <h2 class="fw-bold text-dark m-0">All Contacts</h2>
+                            <p class="text-muted small mb-3">Manage and organize your contacts</p>
+                            <div class="input-group">
+                                <input type="search" id="search" class="form-control rounded-3 p-2"
+                                    placeholder="Search by name, phone, or email...">
+                            </div>
+                        </div>
+
+                        <div id="allContactsList" class="row g-3 mt-3"></div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 order-2 order-lg-2 d-flex flex-column gap-3">
+
+                        <div class="fav-inner bg-white border border-light-subtle rounded-4 overflow-hidden shadow-sm">
+                            <div class="favorites-header d-flex align-items-center gap-3 p-3"
+                                style="background-color: #fdf8f0;">
+                                <div class="icon-box text-center d-flex align-items-center justify-content-center border bg-favorites"
+                                    style="width:35px; height:35px; border-radius:8px;">
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <div class="favorites-info">
+                                    <h2 class="m-0 fs-6 fw-bold text-dark">Favorites</h2>
+                                    <p class="m-0 text-muted small" style="font-size:11px;">Quick access to starred
+                                        contacts</p>
+                                </div>
+                            </div>
+                            <div class="favorites-body p-4 text-center text-secondary small fw-semibold"
+                                id="favoriteBodyList">
+
+                            </div>
+                        </div>
+
+                        <div
+                            class="emergency-inner bg-white border border-light-subtle rounded-4 overflow-hidden shadow-sm">
+                            <div class="emergency-header d-flex align-items-center gap-3 p-3"
+                                style="background-color: #fef2f2;">
+                                <div class="icon-box text-center d-flex align-items-center justify-content-center bg-emergency"
+                                    style="width:35px; height:35px; border-radius:8px;">
+                                    <i class="fa-solid fa-heart-pulse"></i>
+                                </div>
+                                <div class="emergency-info">
+                                    <h2 class="m-0 fs-6 fw-bold text-dark">Emergency</h2>
+                                    <p class="m-0 text-muted small" style="font-size:11px;">Important contacts for
+                                        urgent calls</p>
+                                </div>
+                            </div>
+
+                            <div class="emergency-body p-3" id="emergencyBodyList">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="contact-Form">
+            <div id="addContact"
+                class="addContact-box position-fixed bottom-0 top-0 start-0 end-0 bg-black bg-opacity-10 d-flex align-items-center justify-content-center flex-column d-none">
+                <div class="inner bg-white border border-light-subtle rounded-4 overflow-hidden shadow-sm overflow-scroll my-5"
+                    style="width: 100%; max-width: 450px;">
+
+                    <div
+                        class="register-header bg-white border-bottom d-flex align-items-center justify-content-between p-3 position-sticky top-0">
+                        <h3 class="m-0 fs-5 fw-bold text-dark">Add New Contact</h3>
+                        <button type="button" class="btn close-btn d-flex align-items-center justify-content-center"
+                            id="close-Btn">
+                            <i class="fa-solid fa-xmark text-muted"></i>
+                        </button>
+                    </div>
+
+                    <div class="register-body p-3">
+                        <form action="">
+                            <div
+                                class="form-header d-flex flex-column align-items-center justify-content-center gap-2 mb-4">
+                                <div style="width: 75px; height: 75px; background-color: #398bff;"
+                                    class="rounded-circle d-flex align-items-center justify-content-center text-white fs-3">
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+
+                                <input type="file" id="imageUpload" accept="image/*" class="d-none">
+                                <label for="imageUpload" class="btn btn-light change-photo-btn rounded-3 border-0"
+                                    style="background-color: #f4f5f7;">
+                                    <i class="fa-solid fa-camera text-muted me-1"></i>Change Photo
+                                </label>
+                            </div>
+
+                            <div class="form-body">
+                                <div class="mb-3">
+                                    <label for="fullName" class="form-label fw-semibold text-secondary"
+                                        style="font-size: 14px;">Full Name</label>
+                                    <input type="text" class="form-control p-2 fullname" id="fullName"
+                                        placeholder="enter full name">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="phoneNumber" class="form-label fw-semibold text-secondary"
+                                        style="font-size: 14px;">phone Number</label>
+                                    <input type="text" class="form-control p-2 number" id="phoneNumber"
+                                        placeholder="e.g.,01012345678">
+                                    <span id="phoneError" class="text-danger small d-none"></span>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="address" class="form-label fw-semibold text-secondary"
+                                        style="font-size: 14px;">Address</label>
+                                    <input type="text" class="form-control p-2 address" id="address"
+                                        placeholder="enter address">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="emailAddress" class="form-label fw-semibold text-secondary"
+                                        style="font-size: 14px;">Email address</label>
+                                    <input type="email" class="form-control p-2 email  " id="emailAddress"
+                                        placeholder="name@example.com">
+                                    <span id="emailError" class="text-danger small d-none"></span>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="group" class="form-label fw-semibold text-secondary"
+                                        style="font-size: 14px;">Group</label>
+                                    <select class="form-control group" aria-label="Default select example">
+                                        <option value="" selected>Select a group</option>
+                                        <option value="Family">Family</option>
+                                        <option value="Friends">Friends</option>
+                                        <option value="School">School</option>
+                                        <option value="Work">Work</option>
+                                        <option value="other">other</option>
+                                    </select>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="exampleFormControlTextarea1"
+                                        class="form-label fw-semibold text-secondary">Notes</label>
+                                    <textarea class="form-control note" id="exampleFormControlTextarea1" rows="2"
+                                        placeholder="Add notes about this contact"></textarea>
+                                </div>
+
+                                <div class="mb-3 d-flex align-items-center gap-4">
+
+                                    <div class="form-check">
+
+                                        <input class="form-check-input" type="radio" name="contactType" value="favorite"
+                                            id="first-option">
+                                        <label
+                                            class="form-check-label ms-1 d-flex justify-content-center align-items-center gap-1"
+                                            for="first-option">
+                                            <i class="fa-solid fa-star" style="color: #ffb900;"></i>
+                                            Favorite
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check">
+
+                                        <input class="form-check-input" type="radio" name="contactType"
+                                            value="emergency" id="secound-option">
+                                        <label
+                                            class="form-check-label ms-1 d-flex justify-content-center align-items-center gap-1"
+                                            for="secound-option">
+                                            <i class="fa-solid fa-heart-pulse  fs-5" style="color: #f60e40;"></i>
+                                            Emergency
+                                        </label>
+                                    </div>
+
+                                </div>
+                                <div class="mb-3 d-flex justify-content-evenly align-items-center gap-2">
+
+                                    <button type="button" class="btn btn-cancel w-100 fw-semibold py-2"
+                                        id="cancel-btn">Cancel</button>
+                                    <button type="button"
+                                        class="btn btn-save w-100 fw-semibold py-2 text-white d-flex justify-content-center align-items-center gap-2"
+                                        id="save-btn">
+                                        <i class="fa-solid fa-check"></i>
+                                        Save
+                                        contact</button>
+
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- <section class="contact-cards">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="inner">
+                            <div
+                                class="card-body bg-white border border-light-subtle rounded-4 overflow-hidden shadow-sm h-100">
+                                <div class="favorites-body p-5 text-center text-secondary fw-semibold">
+                                    No favorites yet
+                                </div>
+                                <div class="card-footer d-flex align-items-center justify-content-between gap-3 p-3"
+                                    style="background-color: #fdf8f0;">
+                                    <div class="left-side d-flex gap-2">
+                                        <button type="button"
+                                            class="btn card-btn phone d-flex align-items-center justify-content-center"
+                                            style="background-color: #ecfdf5;">
+                                            <i class="fa-solid fa-phone" style="color: green;"></i>
+                                        </button>
+                                        <button type="button"
+                                            class="btn card-btn email d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-envelope" style="color: #8126fe;"></i>
+                                        </button>
+                                    </div>
+                                    <div class="right-side d-flex gap-2">
+                                        <button type="button"
+                                            class="btn fav-btn d-flex align-items-center justify-content-center">
+                                            <i class="fa-regular fa-star text-muted"></i>
+                                        </button>
+                                        <button type="button"
+                                            class="btn card-btn merg d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-heart-pulse" style="color: #f60e40;"></i>
+                                        </button>
+                                        <button type="button"
+                                            class="btn update-btn d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-pen text-muted"></i>
+                                        </button>
+                                        <button type="button"
+                                            class="btn delete-btn d-flex align-items-center justify-content-center">
+                                            <i class="fa-solid fa-trash text-muted"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section> -->
+    </main>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./javascript/main.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
